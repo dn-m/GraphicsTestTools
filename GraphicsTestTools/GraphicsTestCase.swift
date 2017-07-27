@@ -14,7 +14,11 @@ open class GraphicsTestCase: XCTestCase {
     lazy var artifactsDirectory: URL = {
         return Bundle(for: type(of: self)).bundleURL
             .deletingLastPathComponent()
-            .appendingPathComponent("Artifacts/\(type(of: self))")
+            .appendingPathComponent("Artifacts")
+    }()
+
+    lazy var testCaseDirectory: URL = {
+        return self.artifactsDirectory.appendingPathComponent("\(type(of: self))")
     }()
 
     open override func setUp() {
@@ -22,7 +26,7 @@ open class GraphicsTestCase: XCTestCase {
         print("set up: create dir at: \(artifactsDirectory)")
         do {
             try FileManager.default.createDirectory(
-                at: artifactsDirectory,
+                at: testCaseDirectory,
                 withIntermediateDirectories: true,
                 attributes: nil
             )
@@ -43,7 +47,7 @@ open class GraphicsTestCase: XCTestCase {
 
     // TODO: Create new directory for current target / test case
     public func render(_ layer: CALayer, name: String) {
-        layer.renderToPDF(at: artifactsDirectory.appendingPathComponent("\(name).pdf"))
+        layer.renderToPDF(at: testCaseDirectory.appendingPathComponent("\(name).pdf"))
     }
 
     public func render(_ path: StyledPath, name: String) {
@@ -59,7 +63,8 @@ open class GraphicsTestCase: XCTestCase {
             task.launch()
             task.waitUntilExit()
             return task.terminationStatus
+        #else
+            return 0
         #endif
-        return 0
     }
 }
