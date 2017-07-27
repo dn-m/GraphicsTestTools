@@ -11,7 +11,7 @@ import GeometryTools
 import PathTools
 import GraphicsTools
 
-class GraphicsTestCase: XCTestCase {
+public class GraphicsTestCase: XCTestCase {
 
     lazy var artifactsDirectory: URL = {
         return Bundle(for: type(of: self)).bundleURL
@@ -31,7 +31,7 @@ class GraphicsTestCase: XCTestCase {
         render(layer, name: name)
     }
 
-    override func tearDown() {
+    public override func tearDown() {
         super.tearDown()
         let bundleURL = Bundle(for: type(of: self)).bundleURL
         print("Test artifacts produced at: \(bundleURL)/Artifacts")
