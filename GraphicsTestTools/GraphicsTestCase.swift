@@ -9,7 +9,7 @@
 import XCTest
 import GraphicsTools
 
-public class GraphicsTestCase: XCTestCase {
+open class GraphicsTestCase: XCTestCase {
 
     lazy var artifactsDirectory: URL = {
         return Bundle(for: type(of: self)).bundleURL
@@ -29,7 +29,7 @@ public class GraphicsTestCase: XCTestCase {
         render(layer, name: name)
     }
 
-    public override func tearDown() {
+    open override func tearDown() {
         super.tearDown()
         let bundleURL = Bundle(for: type(of: self)).bundleURL
         print("Test artifacts produced at: \(bundleURL)/Artifacts")
