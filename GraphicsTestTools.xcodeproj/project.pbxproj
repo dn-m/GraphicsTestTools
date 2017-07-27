@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		079D5FE71F2A1B0700AC83A5 /* GraphicsTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D5FE61F2A1B0700AC83A5 /* GraphicsTestCase.swift */; };
 		079D5FE81F2A1B0700AC83A5 /* GraphicsTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D5FE61F2A1B0700AC83A5 /* GraphicsTestCase.swift */; };
-		079D5FEA1F2A1BAF00AC83A5 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 079D5FE91F2A1BAF00AC83A5 /* XCTest.framework */; };
-		079D5FEC1F2A1BB600AC83A5 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 079D5FEB1F2A1BB600AC83A5 /* XCTest.framework */; };
 		1A3F75153BB4A446A3EB722E /* GraphicsTestTools.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D92DF26F7A96032A356C597 /* GraphicsTestTools.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		63A09DB763832CDA2BBB081C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BF003F542CCFA3085AACFA2 /* Foundation.framework */; };
 		93F5BE692E9426C454DE2388 /* GraphicsTestTools.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D92DF26F7A96032A356C597 /* GraphicsTestTools.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -35,7 +33,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				079D5FEC1F2A1BB600AC83A5 /* XCTest.framework in Frameworks */,
 				D262E553CF3108195FDC9C36 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -44,7 +41,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				079D5FEA1F2A1BAF00AC83A5 /* XCTest.framework in Frameworks */,
 				63A09DB763832CDA2BBB081C /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
