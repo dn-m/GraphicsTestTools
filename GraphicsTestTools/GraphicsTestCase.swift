@@ -17,6 +17,22 @@ open class GraphicsTestCase: XCTestCase {
             .appendingPathComponent("Artifacts/\(type(of: self))")
     }()
 
+    open override func setUp() {
+        super.setUp()
+        try? FileManager.default.createDirectory(
+            at: artifactsDirectory,
+            withIntermediateDirectories: false,
+            attributes: nil
+        )
+    }
+
+    open override func tearDown() {
+        super.tearDown()
+        let bundlePath = Bundle(for: type(of: self)).bundlePath
+        _ = shell("open", "\(bundlePath)/Artifacts")
+        print("Test artifacts produced at: \(bundlePath)/Artifacts")
+    }
+
     // TODO: Add Render `Composite` structures.
 
     // TODO: Create new directory for current target / test case
@@ -29,9 +45,12 @@ open class GraphicsTestCase: XCTestCase {
         render(layer, name: name)
     }
 
-    open override func tearDown() {
-        super.tearDown()
-        let bundleURL = Bundle(for: type(of: self)).bundleURL
-        print("Test artifacts produced at: \(bundleURL)/Artifacts")
+    private func shell(_ args: String...) -> Int32 {
+        let task = Process()
+        task.launchPath = "/usr/bin/env"
+        task.arguments = args
+        task.launch()
+        task.waitUntilExit()
+        return task.terminationStatus
     }
 }
