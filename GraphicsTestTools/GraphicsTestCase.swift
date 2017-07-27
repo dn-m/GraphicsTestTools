@@ -21,7 +21,7 @@ open class GraphicsTestCase: XCTestCase {
         super.setUp()
         try? FileManager.default.createDirectory(
             at: artifactsDirectory,
-            withIntermediateDirectories: false,
+            withIntermediateDirectories: true,
             attributes: nil
         )
     }
