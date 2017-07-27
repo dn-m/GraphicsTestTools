@@ -213,6 +213,7 @@
 				3128B7BC39B070BA0D56A361 /* Sources */,
 				083EC24304265FF526302550 /* Frameworks */,
 				469138C2013189A554FD639C /* Headers */,
+				079D60181F2A2B6C00AC83A5 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -230,6 +231,7 @@
 				EF16919C1BDF5D718474EBF4 /* Sources */,
 				46772B95680103875FCF0F1F /* Frameworks */,
 				9C150D22E4AD644B42CA8346 /* Headers */,
+				079D60171F2A2B0B00AC83A5 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -274,6 +276,35 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		079D60171F2A2B0B00AC83A5 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "mkdir -p \"${BUILT_PRODUCTS_DIR}/Artifacts\"\nopen \"${BUILT_PRODUCTS_DIR}/Artifacts\"\n";
+		};
+		079D60181F2A2B6C00AC83A5 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "mkdir -p \"${BUILT_PRODUCTS_DIR}/Artifacts\"\nopen \"${BUILT_PRODUCTS_DIR}/Artifacts\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3128B7BC39B070BA0D56A361 /* Sources */ = {
