@@ -20,11 +20,11 @@ open class GraphicsTestCase: XCTestCase {
     // TODO: Add Render `Composite` structures.
 
     // TODO: Create new directory for current target / test case
-    func render(_ layer: CALayer, name: String) {
+    public func render(_ layer: CALayer, name: String) {
         layer.renderToPDF(at: artifactsDirectory.appendingPathComponent("\(name).pdf"))
     }
 
-    func render(_ path: StyledPath, name: String) {
+    public func render(_ path: StyledPath, name: String) {
         let layer = CAShapeLayer(path)
         render(layer, name: name)
     }
