@@ -7,8 +7,6 @@
 //
 
 import XCTest
-import GeometryTools
-import PathTools
 import GraphicsTools
 
 public class GraphicsTestCase: XCTestCase {
