@@ -19,18 +19,24 @@ open class GraphicsTestCase: XCTestCase {
 
     open override func setUp() {
         super.setUp()
-        try? FileManager.default.createDirectory(
-            at: artifactsDirectory,
-            withIntermediateDirectories: true,
-            attributes: nil
-        )
+        print("set up: create dir at: \(artifactsDirectory)")
+        do {
+            try FileManager.default.createDirectory(
+                at: artifactsDirectory,
+                withIntermediateDirectories: true,
+                attributes: nil
+            )
+        } catch {
+            print(error)
+        }
     }
 
     open override func tearDown() {
         super.tearDown()
-        let bundlePath = Bundle(for: type(of: self)).bundlePath
-        _ = shell("open", "\(bundlePath)/Artifacts")
-        print("Test artifacts produced at: \(bundlePath)/Artifacts")
+        let path = artifactsDirectory.absoluteString
+        _ = shell("open", path)
+        print("tear down: open dir at: \(path)")
+        print("Test artifacts produced at: \(path)")
     }
 
     // TODO: Add Render `Composite` structures.
